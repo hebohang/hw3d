@@ -71,7 +71,8 @@ namespace Rgph
 		{
 			using namespace DirectX;
 
-			const auto pos = XMLoadFloat3( &pShadowCamera->GetPos() );
+			auto tmp_pos = pShadowCamera->GetPos();
+			const auto pos = XMLoadFloat3( &tmp_pos );
 
 			gfx.SetProjection( XMLoadFloat4x4( &projection ) );
 			for( size_t i = 0; i < 6; i++ )
